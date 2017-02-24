@@ -12,7 +12,7 @@ class CardInline(admin.TabularInline):
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
     list_display = ('name', 'status')
-    list_per_page = 50
+    list_per_page = 10
 
     inlines = [
         CardInline,
