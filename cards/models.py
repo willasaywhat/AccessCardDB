@@ -10,7 +10,7 @@ from members.models import Member
 
 class Card(models.Model):
 
-    member = models.ForeignKey(Member, on_delete=models.PROTECT)
+    member = models.ForeignKey(Member, on_delete=models.CASCADE)
 
     card = models.CharField(
         verbose_name="Card ID",

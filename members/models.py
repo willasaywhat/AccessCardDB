@@ -17,6 +17,8 @@ class Member(models.Model):
 
     notes = models.TextField(
         verbose_name="Notes",
+        blank=True,
+        null=True,
     )
 
     STATUS_CHOICES = (

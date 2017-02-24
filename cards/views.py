@@ -10,7 +10,7 @@ def scan_card(request, scanned_card):
     now = datetime.datetime.now()
     c = Card.objects.filter(card=scanned_card).first()
     if c is not None:
-        Log.objects.create(card_scanned=scanned_card, card=c, member=c.member, status_at_scan=c.member.status)
+        Log.objects.create(card_scanned=scanned_card, member_name=c.member.name, status_at_scan=c.member.status)
         res = {'now': now, 'status': c.member.status}
     else:
         Log.objects.create(card_scanned=scanned_card, status_at_scan=0)

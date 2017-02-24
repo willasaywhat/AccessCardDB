@@ -12,9 +12,12 @@ class Log(models.Model):
         max_length=255,
     )
 
-    card = models.ForeignKey(Card, blank=True, null=True, on_delete=models.PROTECT)
-
-    member = models.ForeignKey(Member, blank=True, null=True, on_delete=models.PROTECT)
+    member_name = models.CharField(
+        verbose_name="Member Name",
+        max_length=255,
+        blank=True,
+        null=True,
+    )
 
     STATUS_CHOICES = (
         (1, 'Granted'),
