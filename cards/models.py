@@ -10,9 +10,10 @@ from members.models import Member
 
 class Card(models.Model):
 
-    member = models.ForeignKey(Member)
+    member = models.ForeignKey(Member, on_delete=models.CASCADE)
 
-    card = models.TextField(
+    card = models.CharField(
         verbose_name="Card ID",
+        max_length=255,
     )
 

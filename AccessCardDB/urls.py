@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic.base import RedirectView
+import cards.views
 
+admin.site.site_header = 'MakerFX Access Control Database'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^card/(?P<scanned_card>\w+)/scan/', cards.views.scan_card),
     url(r'^$', RedirectView.as_view(url='/admin', permanent=False), name='index'),
 ]
